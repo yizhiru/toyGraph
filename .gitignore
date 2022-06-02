@@ -127,3 +127,10 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.idea
+*.iml
+my_test
+
+.DS_Store
+toy_graph/.DS_Store
