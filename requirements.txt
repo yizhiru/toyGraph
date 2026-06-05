@@ -1,0 +1,4 @@
+networkx>=2.6
+gensim>=4.0
+joblib>=1.0
+numpy>=1.20

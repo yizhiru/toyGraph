@@ -1,22 +1,9 @@
-
-def partition(num: int,
-              partitions: int):
+def partition(num: int, partitions: int) -> list[int]:
     if partitions <= 1:
         return [num]
-
-    remainder = num % partitions
-    if remainder == 0:
-        return [num // partitions] * partitions
-    zp = partitions - num % partitions
-    quotient = num // partitions
-    partitioned_list = []
-    for i in range(partitions):
-        if i < zp:
-            if quotient != 0:
-                partitioned_list.append(quotient)
-        else:
-            partitioned_list.append(quotient+1)
-    return partitioned_list
-
-
-
+    base, remainder = divmod(num, partitions)
+    return [
+        size
+        for i in range(partitions)
+        if (size := base + (1 if i < remainder else 0)) > 0
+    ]
